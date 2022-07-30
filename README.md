@@ -1,10 +1,10 @@
-# tmdb_app
+# tmdb_app (The Movie Database app)
 
-A new Flutter project.
+A flutter project for my final year project at the university of Buea. Looks and works like TikTok. 
 
-## Getting Started
+## Wanna learn flutter?
 
-This project is a starting point for a Flutter application.
+Check out these links below.
 
 A few resources to get you started if this is your first Flutter project:
 
