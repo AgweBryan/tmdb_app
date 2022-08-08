@@ -20,6 +20,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool obscureText = false;
 
   @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _usernameController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(

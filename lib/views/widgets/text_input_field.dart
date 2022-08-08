@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tmdb_app/constants.dart';
 
 class TextInputField extends StatelessWidget {
   final TextEditingController controller;
@@ -14,6 +13,9 @@ class TextInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final OutlineInputBorder inputBorder =
+        OutlineInputBorder(borderSide: Divider.createBorderSide(context));
+
     return TextField(
       controller: controller,
       decoration: InputDecoration(
@@ -22,14 +24,9 @@ class TextInputField extends StatelessWidget {
         labelStyle: TextStyle(
           fontSize: 20,
         ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
-          borderSide: BorderSide(color: borderColor),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
-          borderSide: BorderSide(color: borderColor),
-        ),
+        enabledBorder: inputBorder,
+        focusedBorder: inputBorder,
+        border: inputBorder,
       ),
       obscureText: isObscure,
     );
