@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:tmdb_app/constants.dart';
 import 'package:tmdb_app/models/video.dart';
@@ -71,27 +69,6 @@ class VideoController extends GetxController {
       await firestore.collection('videos').doc(id).update({
         'reports': FieldValue.arrayUnion([uid])
       });
-    }
-  }
-
-  saveVido(Video videoDetails) async {
-    try {
-      final appStorage = await getTemporaryDirectory();
-      print(appStorage.path);
-
-      final path = '${appStorage.path}/${videoDetails.videoUrl}';
-      await Dio().download(videoDetails.videoUrl, path,
-          onReceiveProgress: (received, total) {
-        double progress = received / total;
-        print(progress);
-        print(received);
-        print(total);
-      });
-
-      // await GallerySaver.saveVideo(path, toDcim: true);
-      Get.snackbar('Download complete', 'Chech gallery to see file');
-    } catch (e) {
-      Get.snackbar('Download error', e.toString());
     }
   }
 }

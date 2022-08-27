@@ -19,8 +19,6 @@ class InboxScreen extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: Column(children: [
             Expanded(child: Obx(() {
-              print(
-                  'the current value of the inbox list is: ${inboxController.inboxes}');
               if (inboxController.inboxes.isEmpty) {
                 return Center(
                     child: Text('No message here',

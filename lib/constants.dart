@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:tmdb_app/controllers/auth_controller.dart';
 import 'package:tmdb_app/views/screens/add_video_screen.dart';
 import 'package:tmdb_app/views/screens/favorites_screen.dart';
-import 'package:tmdb_app/views/screens/inbox_screen.dart';
 import 'package:tmdb_app/views/screens/profile_screen.dart';
 import 'package:tmdb_app/views/screens/search_screen.dart';
 import 'package:tmdb_app/views/screens/video_screen.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_app/constants.dart';
 import 'package:tmdb_app/controllers/favorites_controller.dart';
 import 'package:tmdb_app/controllers/video_controller.dart';
 import 'package:tmdb_app/models/video.dart';
