@@ -58,14 +58,18 @@ class FavoritesController extends GetxController {
           .collection('favorites')
           .get();
 
-      int len = currentUserDoc.docs.length + 1;
-
-      await firestore
-          .collection('users')
-          .doc(authController.user.uid)
-          .collection('favorites')
-          .doc('Fav $len')
-          .set(data.toJson());
+      int ids = 0;
+      for (var element in currentUserDoc.docs) {
+        if (Video.fromSnap(element).id == data.id) {
+          await firestore
+              .collection('users')
+              .doc(authController.user.uid)
+              .collection('favorites')
+              .doc('Fav $ids')
+              .set(data.toJson());
+        }
+        ids++;
+      }
 
       Get.snackbar('Success', 'Video added to favorites successfully');
     } catch (e) {

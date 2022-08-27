@@ -116,25 +116,6 @@ class FavoritesScreen extends StatelessWidget {
         context: context,
         builder: (context) => SimpleDialog(
               children: [
-                // SimpleDialogOption(
-                //   onPressed: () {
-                //     Get.snackbar('Downloading...', '');
-                //     videoController.saveVideo(data);
-                //     Navigator.pop(context);
-                //   },
-                //   child: Row(children: [
-                //     Icon(Icons.save_alt),
-                //     Padding(
-                //       padding: EdgeInsets.all(7),
-                //       child: Text(
-                //         'Save video',
-                //         style: TextStyle(
-                //           fontSize: 20,
-                //         ),
-                //       ),
-                //     )
-                //   ]),
-                // ),
                 SimpleDialogOption(
                   onPressed: () =>
                       favoritesController.removeFromFavorites(data),
@@ -151,7 +132,6 @@ class FavoritesScreen extends StatelessWidget {
                     )
                   ]),
                 ),
-
                 SimpleDialogOption(
                   onPressed: () => Navigator.pop(context),
                   child: Row(children: [
